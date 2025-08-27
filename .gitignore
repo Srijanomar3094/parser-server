@@ -1,0 +1,60 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*.class
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.cache/
+
+# Coverage / test artifacts
+.coverage*
+htmlcov/
+.tox/
+
+# C extensions
+*.so
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+.env/
+venv.bak/
+env.bak/
+# Project-specific virtualenvs
+penv/
+parser/penv/
+
+# Django
+local_settings.py
+# SQLite databases
+*.sqlite3
+parser/db.sqlite3
+
+# Logs
+*.log
+logs/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# Packaging/build (keep conservative)
+build/
+dist/
+.eggs/
+*.egg-info/
+
+# Docker/other runtime locks
+*.pid
+*.pid.lock
