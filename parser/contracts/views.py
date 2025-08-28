@@ -114,7 +114,7 @@ def contract_upload(request):
 
     threading.Thread(target=_background_parse, args=(contract.id,), daemon=True).start()
 
-    return JsonResponse({"contract_id": contract.id})
+    return JsonResponse({"contract_id": str(contract.id)})
 
 
 def contract_status(request, contract_id: int):
@@ -134,7 +134,7 @@ def contract_detail(request, contract_id: int):
         return JsonResponse({"detail": "Processing not complete"}, status=409)
     return JsonResponse(
         {
-            "id": contract.id,
+            "id": str(contract.id),
             "file": contract.file.url if contract.file else None,
             "uploaded_at": contract.uploaded_at,
             "status": contract.status,
@@ -161,7 +161,7 @@ def contract_list(request):
     p = paginator.get_page(page)
     data = [
         {
-            "id": c.id,
+            "id": str(c.id),
             "original_filename": c.original_filename,
             "status": c.status,
             "progress": c.progress,

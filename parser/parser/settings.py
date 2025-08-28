@@ -10,6 +10,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-change-this-in-production")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
+# Database (Mongo) connection settings via env for Docker compatibility
+MONGO_HOST = os.getenv("MONGO_HOST", "localhost")
+MONGO_PORT = int(os.getenv("MONGO_PORT", "27017"))
+
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 INSTALLED_APPS = [
@@ -77,8 +81,8 @@ DATABASES = {
         "NAME": "parser",
         "ENFORCE_SCHEMA": False,
         "CLIENT": {
-            "host": "localhost",
-            "port": 27017,
+            "host": MONGO_HOST,
+            "port": MONGO_PORT,
         }
     }
 }
