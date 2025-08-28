@@ -58,5 +58,3 @@ dist/
 # Docker/other runtime locks
 *.pid
 *.pid.lock
-
-parser/penv/
